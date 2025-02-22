@@ -1,0 +1,37 @@
+Espacios		Cant. Puntos red	Qué se conecta
+Managing director	2			PC e impresora
+Engineers room		10+1			10 PCs y 1 impresora
+Open workstation	14+1			14 PCs y 1 impresora
+Room			4+1			4 PCs y 1 impresora
+Reception		2			1 PC y 1 impresora
+Meeeting room		7			7 PCs (DHCP)
+Conference room		15			15 PCs (DHCP)
+Store (server room)	?			2 Switches, 2 servers, 1 router, 1 firewall
+
+Orden de asignación IPs:
+	0: Red
+	1: Router
+	2: DNS
+	3 a 6: Impresoras
+	7 en adelante: computadoras
+	2 penúltimos: Servers
+
+Subneteo:
+	
+
+Puntos de acceso a red:
+	
+
+Vlans:
+	Interna (todas las salas menos conferencias)
+	Visitantes (conferencias y red visitantes)	
+
+Red inalámbrica:
+	Red visitantes
+	Red interna
+	Conferencias
+
+Añadidos
+	DNS medio medio
+	DHCP para los puertos de red de las conf
+	Seguridad física: Poner servers bajo llave, y tenerlos adentro en el edificio
