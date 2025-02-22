@@ -37,9 +37,12 @@ Añadidos
 	Seguridad física: Poner servers bajo llave, y tenerlos adentro en el edificio
 
 Por hacer:
-	Red cableada Interna
-	Red cableada Visitantes
-	Red inalámbrica Interna
-	Red inalámbrica Visitantes
-	DNS
-	Servers
+	Red cableada Interna			- Lista
+	Red cableada Interna (DHCP)		- Lista
+	Red cableada Visitantes			- Lista
+	Red cableada Visitantes (DHCP)		- Lista
+	Red inalámbrica Interna (DHCP)		- Lista
+	Red inalámbrica Visitantes (DHCP)	- Lista
+	DNS					- Listo
+	Servers					- Listo
+	Router					- Listo

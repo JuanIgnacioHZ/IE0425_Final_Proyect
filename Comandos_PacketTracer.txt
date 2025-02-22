@@ -6,6 +6,8 @@ __Configuración VLAN
 	conf t
 	vlan 10
 	name interna
+	vlan 20
+	name interna
 	exit
 	interface range f0/1-24
 	switchport mode acces
@@ -18,7 +20,10 @@ __Configuración puerto troncal
 	conf t
 	interface g0/1
 	switchport mode trunk
-	switchport trunk allowed vlan 10
+	switchport trunk allowed vlan 10,20
+	interface g0/2
+	switchport mode trunk
+	switchport trunk allowed vlan 10,20
 	exit
 	exit
 
@@ -29,11 +34,53 @@ __Configuración VLAN
 	en
 	show vlan
 	conf t
+	vlan 10
+	name interna
 	vlan 20
-	name visitantes
+	name interna
 	exit
 	interface range f0/1-24
 	switchport mode acces
 	switchport access vlan 20
 	exit
 	show vlan
+
+__Configuración puerto troncal
+	en
+	conf t
+	interface g0/1
+	switchport mode trunk
+	switchport trunk allowed vlan 10,20
+	interface g0/2
+	switchport mode trunk
+	switchport trunk allowed vlan 10,20
+	exit
+	exit
+
+
+Router principal:
+
+__Configuración Router on a stick
+	en
+	conf t
+	int gi 0/0/1.10
+	encapsultaion dot1Q 10
+	ip address 10.0.0.1 255.255.255.0
+	exit
+	int gi 0/0/1.20
+	encapsulation dot1Q 20
+	ip address 10.0.1.1 255.255.255.0
+	exit
+	int gi 0/0/1
+	no shu
+	exit
+
+__Configuración de red
+	en
+	conf t
+	router rip
+	network 10.0.0.0
+	network 10.0.1.0
+	exit
+	exit
+
