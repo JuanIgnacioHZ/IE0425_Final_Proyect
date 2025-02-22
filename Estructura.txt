@@ -35,3 +35,11 @@ Añadidos
 	DNS medio medio
 	DHCP para los puertos de red de las conf
 	Seguridad física: Poner servers bajo llave, y tenerlos adentro en el edificio
+
+Por hacer:
+	Red cableada Interna
+	Red cableada Visitantes
+	Red inalámbrica Interna
+	Red inalámbrica Visitantes
+	DNS
+	Servers
