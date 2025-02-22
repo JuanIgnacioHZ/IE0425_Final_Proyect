@@ -1,5 +1,5 @@
 Espacios		Cant. Puntos red	Qué se conecta
-Managing director	2			PC e impresora
+Managing director	2			PC y 1 impresora
 Engineers room		10+1			10 PCs y 1 impresora
 Open workstation	14+1			14 PCs y 1 impresora
 Room			4+1			4 PCs y 1 impresora
@@ -12,8 +12,8 @@ Orden de asignación IPs:
 	0: Red
 	1: Router
 	2: DNS
-	3 a 6: Impresoras
-	7 en adelante: computadoras
+	3 a 7: Impresoras
+	8 en adelante: computadoras
 	2 penúltimos: Servers
 
 Subneteo:
