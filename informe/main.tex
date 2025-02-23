@@ -1,0 +1,48 @@
+\input{preamble.tex}
+
+%\setlength{\droptitle}{-6em}
+
+%TITULO \\ SUB TITULO \\ SUBSUBTITULO
+\title{ {\Huge Universidad De Costa Rica} \\
+        {\LARGE Facultad de Ingeniería} \\
+        {\LARGE Escuela de Ingeniería Eléctrica} \\ \vspace{3.5cm}
+        {\LARGE Redes de Computadoras - IE0425} \\
+        {\LARGE Proyecto Final: Infraestructura de Red}\\ \vspace{2.5cm}
+}
+
+\author{ {\Large Juan Ignacio Hernández Zamora - B9XXXX} \\ 
+         {\Large Yoel Moya Carmona - B75262} \\ \vspace{3cm}
+}
+
+\date{24 de febrero del 2025}
+
+
+\begin{document}
+
+%\maketitle Usado con el tutulo con encabezado.
+
+\begin{titlingpage}
+    \maketitle
+\end{titlingpage}
+
+
+\tableofcontents
+\clearpage{\pagestyle{empty}}
+
+% Seccion fantasma sin la numeracion natural
+%\phantomsection
+%    \addcontentsline{toc}{subsubsection}{I - Separación Emocional}
+%    \subsubsection*{I - Separación Emocional}
+
+
+
+% ============================================================================
+%                           INICIO DE SECCIONES 
+% ============================================================================
+
+\input{texfiles/introduccion.tex}
+\input{texfiles/desarrollo.tex}
+
+\printbibliography[title={Referencias}]
+
+\end{document}
