@@ -46,7 +46,7 @@
                 \textbf{Equipo} & \textbf{Proveedor} & \textbf{Precio Unitario} & \textbf{Descripción} \\   
                 \hline 
                 \endfirsthead
-                \caption[]{Description of Variables used in this Study (Cont.)} \\
+                \caption[]{Lista de tipos de electrónica de red utilizada (Cont.)} \\
                 \hline
                 \textbf{Equipo} & \textbf{Proveedor} & \textbf{Precio Unitario} & \textbf{Descripción} \\   
                 \hline
@@ -94,7 +94,7 @@
                 \textbf{Equipo} & \textbf{Proveedor} & \textbf{Precio Unitario} & \textbf{Descripción} \\   
                 \hline 
                 \endfirsthead
-                \caption[]{Description of Variables used in this Study (Cont.)} \\
+                \caption[]{Lista de materiales para la canalización de la red (Cont.)} \\
                 \hline
                 \textbf{Equipo} & \textbf{Proveedor} & \textbf{Precio Unitario} & \textbf{Descripción} \\   
                 \hline
@@ -401,7 +401,7 @@
         lista de comandos:
 
         \begin{verbatim}
-    en
+en
 	show vlan
 	conf t
 	vlan 10
@@ -415,11 +415,12 @@
 	exit
 	show vlan
         \end{verbatim}
+
     Se define el puerto troncal para ambos switches, ya que estos
     se conectan con el switch5, que gestiona la red de visitantes.
 
         \begin{verbatim}
-    en
+en
 	conf t
 	interface g0/1
 	switchport mode trunk
@@ -436,7 +437,7 @@
         de la siguiente manera:
 
         \begin{verbatim}
-    en
+en
 	show vlan
 	conf t
 	vlan 10
@@ -458,7 +459,7 @@
         presenta a continuación:
 
         \begin{verbatim}
-    en
+en
 	conf t
 	interface g0/1
 	switchport mode trunk
@@ -478,7 +479,7 @@
         así el acceso al exterior.
 
         \begin{verbatim}
-    en
+en
 	conf t
 	int gi 0/0/1.10
 	encapsultaion dot1Q 10
@@ -496,7 +497,7 @@
         Finalmente, se realiza la configuración de red:
 
         \begin{verbatim}
-    en
+en
 	conf t
 	router rip
 	network 10.0.0.0
@@ -504,8 +505,6 @@
 	exit
 	exit
         \end{verbatim}
-
-
 
     \subsection{Comportamiento Esperado}
 
@@ -546,4 +545,49 @@
     
     
 \section{Presupuesto de Red}
-            \lipsum[1]
+
+    Tomando en cuenta todo lo descrito anterior mente, se presenta
+    en la tabla \ref{tab: presupuesto} la cantidad base nesesaria
+    de dinero para establecer la red funcional, tomando únicamente
+    el costo del equipo a ser instalado.
+
+    \begin{xltabular}{\linewidth}{|>{\f}X|>{\f}X|>{\f}X|>{\f}X|}
+        \caption{Lista de tipos de electrónica de red utilizada}
+        \label{tab: presupuesto}                                  
+        %\addtocounter{table}{-1} \\
+        \hline
+        \textbf{Equipo} & \textbf{Cantidad x Precio} & \textbf{sub-total} & \textbf{justificación} \\   
+        \hline 
+        \endfirsthead
+        \caption[]{Description of Variables used in this Study (Cont.)} \\
+        \hline
+        \textbf{Equipo} & \textbf{Proveedor} & \textbf{Precio Unitario} & \textbf{Descripción} \\   
+        \hline
+        \endhead
+        \multicolumn{\ColumnQuantity}{r}{\footnotesize\textit{Continue on the next page}}
+        \endfoot
+        \hline
+        \endlastfoot
+        
+        ISR4331                           & 1 x \$1,066.00      & \$1,066.00 & Un único router. \\  \hline
+        WS-C2960+24TC-S                   & 3 x \$472.00        & \$1,416.00 & Dos switches internos, uno visitante. \\  \hline
+        EAP610                            & 3 x \$80.99         & \$242.97   & Dos puntos de acceso internos, y uno visitante. \\  \hline
+        UCS C220 M5                       & 3 x \$773.00/735.00 & \$2,243.00 & 1 Servidor con tarjetas de red, dos sin tarjeta. \\  \hline
+        Extensión eléctrica 16 AWG        & 10 x \$5.96         & \$59.6     & Alimentación de los 10 componentes anteriores con la UPS. \\  \hline
+        BE600M1 Back-UPS                  & 2 x \$85.49         & \$170.98   & Una UPS para cada zona con equipo. \\  \hline
+        CANASTA ELECTROZINC 100x65x3000mm & 50m x \$16.95/3m    & \$282.5    & Para guia de cableado sobre el techo. \\  \hline
+        Canaleta de 200 x 10 x 5 cm       & 22m x \$16.31/2m    & \$179.41   & Para cables que bajan del techo o atraviezan el piso. \\  \hline
+        RJ-45 (50ft)                      & 4 x \$8.52          & \$34.08    & Para 2 conexiones de oficina de manager, 1 troncal entre sw5 y sw6, y 1 para punto de acceso de workstation. \\ \hline
+        RJ-45 (5ft)                       & 5 x \$4.99          & \$24.95    & 1 troncal entre sw4 y sw6, uno para cada servidor, 1 troncal con el router. \\ \hline
+        RJ-45 (25ft)                      & 4 x \$6.99          & \$27.96    & 2 para recepción, dos para puntos de acceso. \\ \hline
+        \textbf{total}                    &                     & {\it \$5,747.45} & Sin contar computadoras fijas ni sueldos. \\ \hline
+    \end{xltabular}
+
+    Basandose en precios de computadoras, monitores, teclados e
+    impresoras de \href{https://www.intelec.co.cr/computadoras-gaming/}{intelec},
+    se utiliza \$600 como valor utilitario para PCs, para una
+    cantidad de 17 unidades, y \$120 para impresoras como valor
+    utilitario para 5 unidades, donde se toma en cuenta
+    el cable RJ-45 de 50ft para 22 unidades; el precio
+    total es {\bf \$16,734.89} para la infraestructura.
+    Trabajo de ingeniería suma \$2000 más.
