@@ -1,12 +1,116 @@
 \section{Diseño}
-            \lipsum[1]
+    
+    Se presenta el equipo utilizado, como se distribuye fisicamente sobre
+    el piso de la oficina, y como se distribuye el cableado en cada
+    sección; la configuración (y estructura) lógica de la red, y los
+    servicios que esta ofrece.
+
     \subsection{Lista de equipo}
         % Tablas c/u, enfoque en listado
-            \lipsum[1]
+        
+        Se presenta únicamente el equipo utilizado (no la cantidad),
+        así como el precio de cada unidad y el proveedor del mismo.
+        Se discute brevemente el rol de cada uno en el diseño completo. 
+
         \subsubsection{Electrónica de Red}
-            \lipsum[1]
+            
+            En la tabla \ref{tab: ElectronicaRed} se presenta el equipo
+            electrónico presente en la red. Se construye una única red
+            de capa 3, que trabaje sobre las redes virtuales de area 
+            local definidas, utilizando los servidores para asignación
+            dinámica de direcciónes IP de usuarios (fijos e 
+            inalámbricos).
+            
+
+            % =========================================================
+            %  Commands for the table, for more organized structure
+            % =========================================================
+            \newcommand{\ColumnQuantity}{4}
+            \newcommand{\f}{\footnotesize}
+            \newcommand{\Router}{https://www.router-switch.com/cisco-isr4331-k9-p-16544.html}
+            \newcommand{\Switch}{https://www.router-switch.com/ws-c2960-24tc-s-p-5255.html}
+            \newcommand{\AccessPoint}{https://www.amazon.com/TP-Link-EAP610-Business-Wireless-Integrated/dp/B09G5H4XS2?th=1}
+            \newcommand{\APsheet}{https://www.tp-link.com/baltic/business-networking/omada-sdn-access-point/eap610/#specifications}
+            \newcommand{\Server}{https://www.theserverstore.com/cisco-ucs-c220-m5-10-bay-1u-rackmount-server.html}
+            \newcommand{\ServerDatasheet}{https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-c-series-rack-servers/datasheet-c78-739281.html}
+
+            % =========================================================
+            %  Table
+            % =========================================================
+
+            \begin{xltabular}{\linewidth}{|>{\f}X|>{\f}X|>{\f}X|>{\f}X|}
+                \caption{Lista de tipos de electrónica de red utilizada}
+                \label{tab: ElectronicaRed}                                  
+                %\addtocounter{table}{-1} \\
+                \hline
+                \textbf{Equipo} & \textbf{Proveedor} & \textbf{Precio Unitario} & \textbf{Descripción} \\   
+                \hline 
+                \endfirsthead
+                \caption[]{Description of Variables used in this Study (Cont.)} \\
+                \hline
+                \textbf{Equipo} & \textbf{Proveedor} & \textbf{Precio Unitario} & \textbf{Descripción} \\   
+                \hline
+                \endhead
+                \multicolumn{\ColumnQuantity}{r}{\footnotesize\textit{Continue on the next page}}
+                \endfoot
+                \hline
+                \endlastfoot
+                
+                ISR4331         & \href{\Router}{Cisco}         &  \$1,066.00      & Router, establece la capa 3 completa del edificio. \\  \hline
+                WS-C2960+24TC-S & \href{\Switch}{Cisco}         &  \$472.00        & Switch, define las VLANs privada, pública, y acceso a estas. \\  \hline
+                EAP610          & \href{{\AccessPoint}}{TPLink} &  \$80.99         & Punto de acceso inalámbrico utilizado en la red (\href{\APsheet}{Caracteristicas}). \\  \hline
+                UCS C220 M5     & \href{\Server}{Cisco}         &  \$773.00/735.00 & Servidor con/sin tarjetas de red (\href{\ServerDatasheet}{características}). \\  \hline
+                
+            \end{xltabular}
+                
+
         \subsubsection{Cableado Estructurado}
-            \lipsum[1]
+
+            En la tabla \ref{tab: CableadoEstructurado} se presentan
+            los materiales utilizados en la canalización de la red, 
+            así como los tipos de cables a utilizar por el equipo
+            electrónico durante el funcionamiento de la red. Se incluye
+            una descripción de la función que tiene y el lugar fisico
+            de cada uno de los componentes mencionados.
+
+            % =========================================================
+            %  Commands for the table, for more organized structure
+            % =========================================================
+            
+            \newcommand{\Canaleta}{https://cr.epaenlinea.com/canaleta-de-200-x-10-x-5-cm-color-blanco.html}
+            \newcommand{\Canastas}{https://www.iesacr.com/shop/ba7248-canasta-electrozinc-100x65x3000mm-basor-bf2r100x65-11072?category=477#attr=}
+            \newcommand{\EthernetCable}{https://www.amazon.com/Amazon-Basics-Ethernet-Gold-Plated-Connectors/dp/B00N2VIALK?th=1}
+            \newcommand{\Extenciones}{https://cr.epaenlinea.com/extension-electrica-16-awg-3-m-uso-pesado-naranja.html}
+
+            % =========================================================
+            %  Table
+            % =========================================================
+
+            \begin{xltabular}{\linewidth}{|>{\f}X|>{\f}X|>{\f}X|>{\f}X|}
+                \caption{Lista de materiales para la canalización de la red}
+                \label{tab: CableadoEstructurado}                                  
+                %\addtocounter{table}{-1} \\
+                \hline
+                \textbf{Equipo} & \textbf{Proveedor} & \textbf{Precio Unitario} & \textbf{Descripción} \\   
+                \hline 
+                \endfirsthead
+                \caption[]{Description of Variables used in this Study (Cont.)} \\
+                \hline
+                \textbf{Equipo} & \textbf{Proveedor} & \textbf{Precio Unitario} & \textbf{Descripción} \\   
+                \hline
+                \endhead
+                \multicolumn{\ColumnQuantity}{r}{\footnotesize\textit{Continue on the next page}}
+                \endfoot
+                \hline
+                \endlastfoot
+                
+                RJ-45                             & \href{\EthernetCable}{Amazon} & \$4.99/6.99/8.54  & Para conexiónes entre dispositivos electrónicos de red. \\ \hline
+                Extensión eléctrica 16 AWG        & \href{\Extenciones}{EPA} & \$5.96 & Para alimentación de equipo eléctrico asignado a UPS. \\  \hline
+                CANASTA ELECTROZINC 100x65x3000mm & \href{\Canastas}{IESA} & \$16.95  & Para guia de cableado sobre el techo. \\  \hline
+                Canaleta de 200 x 10 x 5 cm       & \href{\Canaleta}{EPA} & \$16.31  & Para cables que bajan del techo o atraviezan el piso. \\  \hline
+                
+            \end{xltabular}
+
         \subsubsection{Sistemas de Alimentación Eléctrica}
             \lipsum[1]
         \subsubsection{Sistemas de Seguridad}
@@ -24,7 +128,11 @@
         \subsubsection{Servicios de Red}
             \lipsum[1]
 \section{Simulación de la Red}
-            \lipsum[1]
+
+    Se simula la conexión y funcionamiento de la estructura lógica de la red
+    presentando la configuración de cada tipo de equipo, y el comportamiento
+    esperado del mismo dentro de la red con mensajes {\it ping}.
+
     \subsection{Configuración de equipo}
             \lipsum[1]
     \subsection{Comportamiento Esperado}
